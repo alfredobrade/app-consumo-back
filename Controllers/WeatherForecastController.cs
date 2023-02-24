@@ -13,20 +13,62 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
 
+
+    //crea una coleccion estatica para trabajar datos en memoria
+    private static List<WeatherForecast> ListWeatherForecast = new List<WeatherForecast>();
+
+    // este metodo es el constructor del controlador
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
+
+        //agrega una pregunta si la lista es nula o si no tiene nada
+        if(ListWeatherForecast == null || !ListWeatherForecast.Any())
+        {   
+            //copia el codigo del Get de abajo y lo asigna a la lista que creamos
+            ListWeatherForecast = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToList();
+            //.ToArray(); cambia el ToArray por un ToList
+        }
     }
+
+
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = DateTime.Now.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+        //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        //{
+        //    Date = DateTime.Now.AddDays(index),
+        //    TemperatureC = Random.Shared.Next(-20, 55),
+        //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+        //})
+        //.ToArray();
+
+        return ListWeatherForecast;
+    }
+
+
+    //creamos el metodo post
+    [HttpPost]
+    public IActionResult Post(WeatherForecast weatherForecast)
+    {
+        ListWeatherForecast.Add(weatherForecast);   
+        return Ok();
+
+    }
+
+    //creamos el metodo delet
+    [HttpDelete]
+    public IActionResult Delete(int id)
+    {
+        ListWeatherForecast.RemoveAt(id);
+        return Ok();
+
     }
 }
