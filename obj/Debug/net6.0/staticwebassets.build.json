@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "RZ50rnPJphPH0Hb5SrQJXHkSXjYVEfq04HipqoLjlTs=",
+  "Source": "app-consumo",
+  "BasePath": "_content/app-consumo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

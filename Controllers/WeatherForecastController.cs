@@ -6,6 +6,7 @@ namespace app_consumo.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
+    //se crea una collection con datos
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -38,10 +39,11 @@ public class WeatherForecastController : ControllerBase
     }
 
 
-
+    //crea un endpoint 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
+        // devuelve un random de 4 5 elementos
         //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         //{
         //    Date = DateTime.Now.AddDays(index),
@@ -64,7 +66,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     //creamos el metodo delet
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
         ListWeatherForecast.RemoveAt(id);
