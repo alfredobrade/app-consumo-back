@@ -16,6 +16,7 @@ public class WeatherForecastController : ControllerBase
 
 
     //crea una coleccion estatica para trabajar datos en memoria
+    // esto lo hace para poder trabajar con los datos que se generan al iniciar
     private static List<WeatherForecast> ListWeatherForecast = new List<WeatherForecast>();
 
     // este metodo es el constructor del controlador
@@ -34,7 +35,7 @@ public class WeatherForecastController : ControllerBase
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToList();
-            //.ToArray(); cambia el ToArray por un ToList
+            //.ToArray(); cambia el ToArray por un ToList porque se lo esta asignando a una lista
         }
     }
 
@@ -58,6 +59,7 @@ public class WeatherForecastController : ControllerBase
 
     //creamos el metodo post
     [HttpPost]
+    [Route("[action]")]
     public IActionResult Post(WeatherForecast weatherForecast)
     {
         ListWeatherForecast.Add(weatherForecast);   
