@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/alfre/Documents/app-consumo/app-consumo.csproj": {}
+    "C:\\Users\\alfre\\source\\repos\\fuel-consume\\app-consumo.csproj": {}
   },
   "projects": {
-    "/home/alfre/Documents/app-consumo/app-consumo.csproj": {
+    "C:\\Users\\alfre\\source\\repos\\fuel-consume\\app-consumo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alfre/Documents/app-consumo/app-consumo.csproj",
+        "projectUniqueName": "C:\\Users\\alfre\\source\\repos\\fuel-consume\\app-consumo.csproj",
         "projectName": "app-consumo",
-        "projectPath": "/home/alfre/Documents/app-consumo/app-consumo.csproj",
-        "packagesPath": "/home/alfre/.nuget/packages/",
-        "outputPath": "/home/alfre/Documents/app-consumo/obj/",
+        "projectPath": "C:\\Users\\alfre\\source\\repos\\fuel-consume\\app-consumo.csproj",
+        "packagesPath": "C:\\Users\\alfre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alfre\\source\\repos\\fuel-consume\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/alfre/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alfre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

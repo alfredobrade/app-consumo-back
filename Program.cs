@@ -29,9 +29,9 @@ builder.Services.AddScoped<IVehicleService, VehicleService>();
 builder.Services.AddScoped<IRefuelingService, RefuelingService>();
 
 //base de datos inMemory
-builder.Services.AddDbContext<ConsumosContext>(p => p.UseInMemoryDatabase("ConsumosDB"));
+//builder.Services.AddDbContext<ConsumosContext>(p => p.UseInMemoryDatabase("ConsumosDB"));
 // base de datos real
-//builder.Services.AddSqlServer<ConsumosContext>(" ");
+builder.Services.AddSqlServer<ConsumosContext>("Data Source=DESKTOP-C99SI6K;Initial Catalog=fuel_consume;user id=sa;password=Panchito8513");
 //conectando a una db de postgres
 // verificar los puertos
 //services.AddDbContext<HotelContextDB>(options => options.UseNpgsql(“Server=postgreServer;Database=DbName;Port=5432;User Id=user;Password=password;”));
@@ -66,7 +66,7 @@ app.UseAuthorization();
 
 
 //creando una conexion con base de datos InMemory
-app.MapGet("/dbconexionim", async ([FromServices] ConsumosContext dbContext) =>
+app.MapGet("/dbconexion", async ([FromServices] ConsumosContext dbContext) =>
 {
     dbContext.Database.EnsureCreated();
     return Results.Ok("base de datos en memoria: " + dbContext.Database.IsInMemory());
