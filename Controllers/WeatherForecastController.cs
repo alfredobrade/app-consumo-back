@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using app_consumo.Models;
 
 namespace app_consumo.Controllers;
 

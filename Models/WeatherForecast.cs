@@ -1,4 +1,4 @@
-namespace app_consumo;
+namespace app_consumo.Models;
 
 public class WeatherForecast
 {
